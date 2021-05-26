@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">StudentHouse</string>
+    <string name="PATH_UTENTE">com.example.studenthouse.Utente</string>
+    <string-array name="facolta">
+        <item>Architettura</item>
+        <item>Beni culturali</item>
+        <item>Biologia</item>
+        <item>Chimica</item>
+        <item>Economia</item>
+        <item>Filosofia</item>
+        <item>Fisica</item>
+        <item>Giurisprudenza</item>
+        <item>Infermieristica</item>
+        <item>Informatica</item>
+        <item>Ingegneria</item>
+        <item>Lettere</item>
+        <item>Lingue</item>
+        <item>Logopedia</item>
+        <item>Matematica</item>
+        <item>Mediazione Linguistica</item>
+        <item>Medicina</item>
+        <item>Ostetricia</item>
+        <item>Psicologia</item>
+        <item>Scienze della comunicazione</item>
+        <item>Scienze naturali</item>
+        <item>Scienze politiche</item>
+    </string-array>
 </resources>
