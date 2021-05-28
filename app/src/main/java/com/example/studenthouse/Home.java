@@ -4,16 +4,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.media.Image;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Space;
+import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Home extends AppCompatActivity {
 
@@ -50,7 +58,40 @@ public class Home extends AppCompatActivity {
             this.utente = new Utente();
         }
 
-        // MOSTRARE POST CREATI
+        LinearLayout linearLayout = findViewById(R.id.linearlayout);
+
+        ArrayList<Post> postList = new ArrayList<Post>();
+
+        for(int i = Post.postList.size() - 1; i >= 0; i--){
+            postList.add(Post.postList.get(i));
+        }
+
+        for(int i = 0; i < postList.size(); i++){
+            LinearLayout layout = new LinearLayout(this);
+            layout.setOrientation(LinearLayout.VERTICAL);
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            lp.setMargins(10, 0, 10, 0);
+            layout.setLayoutParams(lp);
+
+            TextView autore = new TextView(this);
+            autore.setText(postList.get(i).getAutore());
+            autore.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+            autore.setTextSize(20);
+            autore.setLayoutParams(layout.getLayoutParams());
+            layout.addView(autore);
+
+            TextView testo = new TextView(this);
+            testo.setText(postList.get(i).getTesto());
+            testo.setTextSize(20);
+            testo.setLayoutParams(layout.getLayoutParams());
+            layout.addView(testo);
+
+            Space space = new Space(this);
+            space.setPadding(0, 5, 0, 5);
+            layout.addView(space);
+
+            linearLayout.addView(layout);
+        }
 
         menuIcon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +104,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Home.this, Ricerca.class);
+                intent.putExtra(String.valueOf(R.string.PATH_UTENTE), utente);
                 startActivity(intent);
             }
         });
@@ -73,7 +115,8 @@ public class Home extends AppCompatActivity {
                 postTIL.setError(null);
                 if(CheckPost()){
                     Intent intent = new Intent(Home.this, Home.class);
-                    intent.putExtra(String.valueOf(R.string.PATH_POST), post);
+                    Post.postList.add(post);
+                    intent.putExtra(String.valueOf(R.string.PATH_UTENTE), utente);
                     startActivity(intent);
                 }
             }

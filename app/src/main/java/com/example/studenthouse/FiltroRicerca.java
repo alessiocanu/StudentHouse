@@ -8,7 +8,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.Serializable;
+
 public class FiltroRicerca extends AppCompatActivity {
+
+    Utente utente = new Utente();
 
     TextView actionBarText;
     ImageView backIcon, rightIcon;
@@ -26,6 +30,16 @@ public class FiltroRicerca extends AppCompatActivity {
 
         backIcon.setImageResource(R.drawable.ic_baseline_arrow_back_24);
         rightIcon.setVisibility(View.INVISIBLE);
+
+        Intent intent = getIntent();
+        Serializable object = intent.getSerializableExtra(String.valueOf(R.string.PATH_UTENTE));
+
+        if(object instanceof Utente){
+            this.utente = (Utente)object;
+        }
+        else{
+            this.utente = new Utente();
+        }
 
         backIcon.setOnClickListener(new View.OnClickListener() {
             @Override

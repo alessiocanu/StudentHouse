@@ -1,8 +1,11 @@
 package com.example.studenthouse;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Post implements Serializable {
+
+    public static ArrayList<Post> postList = new ArrayList<Post>();
 
     private String autore;
     private String testo;
