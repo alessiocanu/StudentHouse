@@ -2,11 +2,15 @@ package com.example.studenthouse;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -21,10 +25,22 @@ public class Login extends AppCompatActivity {
 
     Utente utente = new Utente();
 
+    TextView actionBarText;
+    ImageView leftIcon, rightIcon;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        actionBarText = findViewById(R.id.actionbartext);
+        actionBarText.setText("Login");
+
+        leftIcon = findViewById(R.id.lefticon);
+        rightIcon = findViewById(R.id.righticon);
+
+        leftIcon.setVisibility(View.INVISIBLE);
+        rightIcon.setVisibility(View.INVISIBLE);
 
         usernameTIL = findViewById(R.id.usernameLogTIL);
         passwordTIL = findViewById(R.id.passwordLogTIL);
@@ -38,7 +54,7 @@ public class Login extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Login.this, Registrazione.class);    // Cambiare destinazione
+                Intent intent = new Intent(Login.this, Home.class);
                 usernameTIL.setError(null);
                 passwordTIL.setError(null);
                 if(CheckLogin()) {

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">StudentHouse</string>
     <string name="PATH_UTENTE">com.example.studenthouse.Utente</string>
+    <string name="PATH_POST">com.example.studenthouse.Post</string>
     <string-array name="facolta">
         <item>Architettura</item>
         <item>Beni culturali</item>

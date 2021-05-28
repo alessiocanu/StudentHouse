@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -25,10 +28,22 @@ public class Registrazione extends AppCompatActivity implements AdapterView.OnIt
 
     Utente utente = new Utente();
 
+    TextView actionBarText;
+    ImageView leftIcon, rightIcon;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrazione);
+
+        actionBarText = findViewById(R.id.actionbartext);
+        actionBarText.setText("Registrazione");
+
+        leftIcon = findViewById(R.id.lefticon);
+        rightIcon = findViewById(R.id.righticon);
+
+        leftIcon.setVisibility(View.INVISIBLE);
+        rightIcon.setVisibility(View.INVISIBLE);
 
         usernameTIL = findViewById(R.id.usernameRegTIL);
         passwordTIL = findViewById(R.id.passwordRegTIL);
