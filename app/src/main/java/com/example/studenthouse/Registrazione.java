@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -74,6 +75,7 @@ public class Registrazione extends AppCompatActivity implements AdapterView.OnIt
                     UpdateUtente();
                     Utente.userList.add(utente);
                     startActivity(intent);
+                    Toast.makeText(Registrazione.this, "Registrazione effettuata con successo", Toast.LENGTH_LONG).show();
                 }
             }
         });

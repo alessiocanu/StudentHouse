@@ -51,6 +51,10 @@ public class Login extends AppCompatActivity {
         login = findViewById(R.id.login);
         registrati = findViewById(R.id.registrati);
 
+        if(Annuncio.annuncioList.size() == 0) {
+            InitializeAnnunci();
+        }
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,5 +92,74 @@ public class Login extends AppCompatActivity {
         }
         usernameTIL.setError("Non esistono utenti con questo username!");
         return false;
+    }
+
+    public void InitializeAnnunci(){
+        Filtro casa1 = new Filtro();
+        casa1.setTreStanze(true);
+        casa1.setUnBagno(true);
+        casa1.setSoloRagazzi(true);
+
+        Filtro casa2 = new Filtro();
+        casa2.setQuattroStanze(true);
+        casa2.setDueBagni(true);
+        casa2.setAmboSessi(true);
+
+        Filtro casa3 = new Filtro();
+        casa3.setQuattroStanze(true);
+        casa3.setDueBagni(true);
+        casa3.setSoloRagazze(true);
+
+        Filtro casa4 = new Filtro();
+        casa4.setQuattroStanze(true);
+        casa4.setUnBagno(true);
+        casa4.setSoloRagazzi(true);
+
+        Filtro casa5 = new Filtro();
+        casa5.setDueStanze(true);
+        casa5.setUnBagno(true);
+        casa5.setSoloRagazze(true);
+
+        Filtro casa6 = new Filtro();
+        casa6.setDueStanze(true);
+        casa6.setUnBagno(true);
+        casa6.setAmboSessi(true);
+
+        Filtro casa7 = new Filtro();
+        casa7.setTreStanze(true);
+        casa7.setUnBagno(true);
+        casa7.setAmboSessi(true);
+
+        Annuncio.annuncioList.add(new Annuncio("Mario Fenu", "Bilocale in centro",
+                "Piacevole appartamento situato in centro, ideale per amici o coppie. " +
+                        "Per info contattatemi al numero 346 *** ****", 300, casa6));
+
+        Annuncio.annuncioList.add(new Annuncio("Carlo Lisci", "Trilocale zona magistero",
+                "Trilocale zona magistero a pochi passi dal magistero e dalle principali linee ctm. " +
+                        "Scrivetemi su whatsapp 342 *** ****", 240, casa7));
+
+        Annuncio.annuncioList.add(new Annuncio("Paolo Bitta", "Appartamento studentesse Is Mirrionis",
+                "Appartamento spazioso zona Is Mirrionis. Si richiede gruppo già formato. " +
+                        "Solo chiamate, numero 349 *** ****", 220, casa3));
+
+        Annuncio.annuncioList.add(new Annuncio("Luisa Orlando", "Quadrilocale via Dante",
+                "Appartamento di quattro stanze in via Dante. Solo persone pulite, non fumatori. " +
+                        "Contattatemi su whatsapp dopo le 17, 320 *** ****", 320, casa2));
+
+        Annuncio.annuncioList.add(new Annuncio("Cinzia Scanu", "Appartamento via Quirra",
+                "Affitto appartamento di due stanze, solo ragazze pulite possibilmente referenziate. " +
+                        "Non rispondo alle chiamate, scrivetemi 344 *** ****", 230, casa5));
+
+        Annuncio.annuncioList.add(new Annuncio("Sergio Matta", "Via Vittorio Emanuele, 4 stanze",
+                "Affitto quadrilocale via Vittorio Emanuele II, niente coppie o fumatori. " +
+                        "Whatsapp 346 *** ****", 320, casa2));
+
+        Annuncio.annuncioList.add(new Annuncio("Mario De Luigi", "Appartamento Sant'Avendrace",
+                "Trilocale zona Sant'Avendrace, viale Trieste, solo ragazzi gruppo già formato. " +
+                        "Per informazioni, 347 *** ****", 210, casa1));
+
+        Annuncio.annuncioList.add(new Annuncio("Walter Bianco", "Quattro stanze solo ragazzi",
+                "Appartamento di quattro stanze, zona Monserrato, vicino a un pratico autolavaggio. " +
+                        "Contattatemi al 333 *** ****, prezzo trattabile.", 250, casa4));
     }
 }

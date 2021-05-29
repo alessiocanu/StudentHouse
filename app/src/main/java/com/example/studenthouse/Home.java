@@ -4,13 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
-import android.media.Image;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Space;
@@ -70,7 +68,7 @@ public class Home extends AppCompatActivity {
             LinearLayout layout = new LinearLayout(this);
             layout.setOrientation(LinearLayout.VERTICAL);
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            lp.setMargins(10, 0, 10, 0);
+            lp.setMargins(10, 10, 10, 10);
             layout.setLayoutParams(lp);
 
             TextView autore = new TextView(this);
@@ -86,11 +84,12 @@ public class Home extends AppCompatActivity {
             testo.setLayoutParams(layout.getLayoutParams());
             layout.addView(testo);
 
-            Space space = new Space(this);
-            space.setPadding(0, 5, 0, 5);
-            layout.addView(space);
+            View separator = new View(this);
+            separator.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 2));
+            separator.setBackgroundColor(Color.DKGRAY);
 
             linearLayout.addView(layout);
+            linearLayout.addView(separator);
         }
 
         menuIcon.setOnClickListener(new View.OnClickListener() {

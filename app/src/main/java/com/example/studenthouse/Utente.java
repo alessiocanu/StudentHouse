@@ -12,12 +12,15 @@ public class Utente implements Serializable {
     private String nome, cognome;
     private String facolta;
 
+    private Boolean showFacolta;
+
     public Utente(){
         this.username = "";
         this.password = "";
         this.nome = "";
         this.cognome = "";
         this.facolta = "";
+        this.showFacolta = false;
     }
 
     public Utente(String username, String password, String nome, String cognome, String facolta){
@@ -26,6 +29,7 @@ public class Utente implements Serializable {
         this.nome = nome;
         this.cognome = cognome;
         this.facolta = facolta;
+        showFacolta = false;
     }
 
     public String getUsername() {
@@ -66,5 +70,13 @@ public class Utente implements Serializable {
 
     public void setFacolta(String facolta) {
         this.facolta = facolta;
+    }
+
+    public Boolean getShowFacolta() {
+        return showFacolta;
+    }
+
+    public void setShowFacolta(Boolean showFacolta) {
+        this.showFacolta = showFacolta;
     }
 }
