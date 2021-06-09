@@ -2,6 +2,7 @@
     <string name="app_name">StudentHouse</string>
     <string name="PATH_UTENTE">com.example.studenthouse.Utente</string>
     <string name="PATH_ANNUNCIO">com.example.studenthouse.Annuncio</string>
+    <string name="PATH_FILTRO">com.example.studenthouse.Filtro</string>
     <string-array name="facolta">
         <item>Architettura</item>
         <item>Beni culturali</item>
@@ -25,5 +26,11 @@
         <item>Scienze della comunicazione</item>
         <item>Scienze naturali</item>
         <item>Scienze politiche</item>
+    </string-array>
+    <string-array name="filtri">
+        <item>Nessuna preferenza</item>
+        <item>Solo ragazzi</item>
+        <item>Solo ragazze</item>
+        <item>Sia ragazzi sia ragazze</item>
     </string-array>
 </resources>

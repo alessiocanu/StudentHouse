@@ -14,6 +14,7 @@ public class VistaAnnuncio extends AppCompatActivity {
 
     Utente utente = new Utente();
     Annuncio annuncio = new Annuncio();
+    Filtro filtro = new Filtro(false);
 
     TextView actionBarText;
     ImageView backIcon, rightIcon;
@@ -42,6 +43,7 @@ public class VistaAnnuncio extends AppCompatActivity {
         Intent intent = getIntent();
         Serializable object = intent.getSerializableExtra(String.valueOf(R.string.PATH_UTENTE));
         Serializable object2 = intent.getSerializableExtra(String.valueOf(R.string.PATH_ANNUNCIO));
+        Serializable object3 = intent.getSerializableExtra(String.valueOf(R.string.PATH_FILTRO));
 
         if(object instanceof Utente){
             this.utente = (Utente)object;
@@ -57,6 +59,13 @@ public class VistaAnnuncio extends AppCompatActivity {
             this.annuncio = new Annuncio();
         }
 
+        if(object3 instanceof Filtro){
+            this.filtro = (Filtro)object3;
+        }
+        else{
+            this.filtro = new Filtro(false);
+        }
+
         titolo.setText(annuncio.getTitolo());
         proprietario.setText(annuncio.getProprietario());
         String costoText = annuncio.getCosto() + " €";
@@ -68,6 +77,7 @@ public class VistaAnnuncio extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(VistaAnnuncio.this, Ricerca.class);
                 intent.putExtra(String.valueOf(R.string.PATH_UTENTE), utente);
+                intent.putExtra(String.valueOf(R.string.PATH_FILTRO), filtro);
                 startActivity(intent);
             }
         });

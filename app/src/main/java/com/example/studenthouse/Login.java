@@ -95,37 +95,37 @@ public class Login extends AppCompatActivity {
     }
 
     public void InitializeAnnunci(){
-        Filtro casa1 = new Filtro();
+        Filtro casa1 = new Filtro(false);
         casa1.setTreStanze(true);
         casa1.setUnBagno(true);
         casa1.setSoloRagazzi(true);
 
-        Filtro casa2 = new Filtro();
+        Filtro casa2 = new Filtro(false);
         casa2.setQuattroStanze(true);
         casa2.setDueBagni(true);
         casa2.setAmboSessi(true);
 
-        Filtro casa3 = new Filtro();
+        Filtro casa3 = new Filtro(false);
         casa3.setQuattroStanze(true);
         casa3.setDueBagni(true);
         casa3.setSoloRagazze(true);
 
-        Filtro casa4 = new Filtro();
+        Filtro casa4 = new Filtro(false);
         casa4.setQuattroStanze(true);
         casa4.setUnBagno(true);
         casa4.setSoloRagazzi(true);
 
-        Filtro casa5 = new Filtro();
+        Filtro casa5 = new Filtro(false);
         casa5.setDueStanze(true);
         casa5.setUnBagno(true);
         casa5.setSoloRagazze(true);
 
-        Filtro casa6 = new Filtro();
+        Filtro casa6 = new Filtro(false);
         casa6.setDueStanze(true);
         casa6.setUnBagno(true);
         casa6.setAmboSessi(true);
 
-        Filtro casa7 = new Filtro();
+        Filtro casa7 = new Filtro(false);
         casa7.setTreStanze(true);
         casa7.setUnBagno(true);
         casa7.setAmboSessi(true);

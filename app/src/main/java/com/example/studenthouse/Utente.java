@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class Utente implements Serializable {
     public static ArrayList<Utente> userList = new ArrayList<Utente>();
+    public static ArrayList<Annuncio> preferiti = new ArrayList<Annuncio>();
 
     private String username;
     private String password;

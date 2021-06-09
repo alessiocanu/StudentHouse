@@ -75,7 +75,7 @@ public class Registrazione extends AppCompatActivity implements AdapterView.OnIt
                     UpdateUtente();
                     Utente.userList.add(utente);
                     startActivity(intent);
-                    Toast.makeText(Registrazione.this, "Registrazione effettuata con successo", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Registrazione.this, "Registrazione effettuata con successo", Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -15,15 +15,15 @@ public class Filtro implements Serializable {
     private Boolean soloRagazze;
     private Boolean amboSessi;
 
-    public Filtro(){
-        this.dueStanze = false;
-        this.treStanze = false;
-        this.quattroStanze = false;
-        this.unBagno = false;
-        this.dueBagni = false;
-        this.soloRagazzi = false;
-        this.soloRagazze = false;
-        this.amboSessi = false;
+    public Filtro(Boolean bool){
+        this.dueStanze = bool;
+        this.treStanze = bool;
+        this.quattroStanze = bool;
+        this.unBagno = bool;
+        this.dueBagni = bool;
+        this.soloRagazzi = bool;
+        this.soloRagazze = bool;
+        this.amboSessi = bool;
     }
 
     public Boolean getDueStanze() {

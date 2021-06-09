@@ -20,7 +20,7 @@ public class Annuncio implements Serializable {
         this.titolo = "";
         this.descrizione = "";
         this.costo = 0;
-        this.filtro = new Filtro();
+        this.filtro = new Filtro(false);
     }
 
     public Annuncio(String proprietario, String titolo, String descrizione, int costo, Filtro filtro){
