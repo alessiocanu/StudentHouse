@@ -1,22 +1,28 @@
 package com.example.studenthouse;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Space;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
+import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -24,7 +30,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Home extends AppCompatActivity {
+public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     Utente utente = new Utente();
     Post post = new Post();
@@ -37,6 +43,9 @@ public class Home extends AppCompatActivity {
 
     AppCompatButton inviaPost;
 
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +57,17 @@ public class Home extends AppCompatActivity {
         postTIL = findViewById(R.id.postTIL);
         postText = findViewById(R.id.post);
         inviaPost = findViewById(R.id.inviapost);
+
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+
+        navigationView.bringToFront();
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        navigationView.setNavigationItemSelectedListener(this);
 
         Intent intent = getIntent();
         Serializable object = intent.getSerializableExtra(String.valueOf(R.string.PATH_UTENTE));
@@ -98,7 +118,7 @@ public class Home extends AppCompatActivity {
         menuIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Si aprirà il menù
+                drawerLayout.openDrawer(GravityCompat.START);
             }
         });
 
@@ -125,6 +145,16 @@ public class Home extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        else {
+            super.onBackPressed();
+        }
+    }
+
     public Boolean CheckPost(){
         if(postText.getText().toString().isEmpty()){
             postTIL.setError("Non puoi inviare un post vuoto!");
@@ -135,5 +165,26 @@ public class Home extends AppCompatActivity {
             post.setAutore(utente.getNome() + " " + utente.getCognome());
             return true;
         }
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.preferiti:
+                Intent intent = new Intent(Home.this, Preferiti.class);
+                intent.putExtra(String.valueOf(R.string.PATH_UTENTE), utente);
+                startActivity(intent);
+                break;
+            case R.id.impostazioni:
+                Intent intent2 = new Intent(Home.this, Impostazioni.class);
+                intent2.putExtra(String.valueOf(R.string.PATH_UTENTE), utente);
+                startActivity(intent2);
+                break;
+            case R.id.logout:
+                Intent intent3 = new Intent(Home.this, Login.class);
+                startActivity(intent3);
+                break;
+        }
+        return true;
     }
 }

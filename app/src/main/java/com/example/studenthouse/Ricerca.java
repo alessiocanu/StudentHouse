@@ -86,6 +86,12 @@ public class Ricerca extends AppCompatActivity {
                 starLayout.setLayoutParams(starLp);
 
                 ImageView star = new ImageView(this);
+                if(Utente.preferiti.contains(Annuncio.annuncioList.get(i))){
+                    star.setImageResource(R.drawable.ic_baseline_star_24);
+                }
+                else{
+                    star.setImageResource(R.drawable.ic_baseline_star_border_24);
+                }
                 star.setImageResource(R.drawable.ic_baseline_star_border_24);
                 star.setLayoutParams(starLayout.getLayoutParams());
 
