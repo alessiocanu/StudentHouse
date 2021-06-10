@@ -92,7 +92,6 @@ public class Ricerca extends AppCompatActivity {
                 else{
                     star.setImageResource(R.drawable.ic_baseline_star_border_24);
                 }
-                star.setImageResource(R.drawable.ic_baseline_star_border_24);
                 star.setLayoutParams(starLayout.getLayoutParams());
 
                 int j = i;
