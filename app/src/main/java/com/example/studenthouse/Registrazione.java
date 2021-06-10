@@ -19,9 +19,9 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class Registrazione extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
-    TextInputLayout usernameTIL, passwordTIL, password2TIL, nomeTIL, cognomeTIL;
+    TextInputLayout usernameTIL, passwordTIL, password2TIL, nomeTIL, cognomeTIL, numeroTIL;
 
-    TextInputEditText username, password, password2, nome, cognome;
+    TextInputEditText username, password, password2, nome, cognome, numero;
 
     Spinner facolta;
 
@@ -51,12 +51,14 @@ public class Registrazione extends AppCompatActivity implements AdapterView.OnIt
         password2TIL = findViewById(R.id.password2RegTIL);
         nomeTIL = findViewById(R.id.nomeTIL);
         cognomeTIL = findViewById(R.id.cognomeTIL);
+        numeroTIL = findViewById(R.id.numeroTIL);
 
         username = findViewById(R.id.usernameReg);
         password = findViewById(R.id.passwordReg);
         password2 = findViewById(R.id.password2Reg);
         nome = findViewById(R.id.nome);
         cognome = findViewById(R.id.cognome);
+        numero = findViewById(R.id.numero);
 
         facolta = findViewById(R.id.spinnerfacolta);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.facolta, android.R.layout.simple_spinner_item);
@@ -94,6 +96,7 @@ public class Registrazione extends AppCompatActivity implements AdapterView.OnIt
         this.utente.setPassword(password.getText().toString());
         this.utente.setNome(nome.getText().toString());
         this.utente.setCognome(cognome.getText().toString());
+        this.utente.setNumTelefono(numero.getText().toString());
     }
 
     public Boolean CheckValid(){
@@ -140,6 +143,13 @@ public class Registrazione extends AppCompatActivity implements AdapterView.OnIt
         }
         else{
             cognomeTIL.setError(null);
+        }
+        if(numero.getText().toString().isEmpty()){
+            numeroTIL.setError("Inserisci un numero di telefono per contattarti!");
+            return false;
+        }
+        else{
+            numeroTIL.setError(null);
         }
         return true;
     }

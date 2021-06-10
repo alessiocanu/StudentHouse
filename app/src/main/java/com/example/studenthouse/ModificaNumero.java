@@ -5,16 +5,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 import java.io.Serializable;
 
-public class Impostazioni extends AppCompatActivity {
+public class ModificaNumero extends AppCompatActivity {
 
     Utente utente = new Utente();
 
-    TextView modificaDati, cambiaPassword, modificaInfoContatto;
+    TextInputEditText numero;
+
+    Button conferma;
 
     TextView actionBarText;
     ImageView backIcon, rightIcon;
@@ -22,10 +27,10 @@ public class Impostazioni extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_impostazioni);
+        setContentView(R.layout.activity_modifica_numero);
 
         actionBarText = findViewById(R.id.actionbartext);
-        actionBarText.setText("Impostazioni");
+        actionBarText.setText("Modifica il tuo numero");
 
         backIcon = findViewById(R.id.lefticon);
         rightIcon = findViewById(R.id.righticon);
@@ -33,9 +38,9 @@ public class Impostazioni extends AppCompatActivity {
         backIcon.setImageResource(R.drawable.ic_baseline_arrow_back_24);
         rightIcon.setVisibility(View.INVISIBLE);
 
-        modificaDati = findViewById(R.id.modificadati);
-        cambiaPassword = findViewById(R.id.cambiapassword);
-        modificaInfoContatto = findViewById(R.id.modificainfocontatto);
+        numero = findViewById(R.id.numeroMod);
+
+        conferma = findViewById(R.id.confermamodnumero);
 
         Intent intent = getIntent();
         Serializable object = intent.getSerializableExtra(String.valueOf(R.string.PATH_UTENTE));
@@ -50,30 +55,18 @@ public class Impostazioni extends AppCompatActivity {
         backIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Impostazioni.this, Home.class);
+                Intent intent = new Intent(ModificaNumero.this, Impostazioni.class);
                 intent.putExtra(String.valueOf(R.string.PATH_UTENTE), utente);
                 startActivity(intent);
             }
         });
 
-        modificaDati.setOnClickListener(new View.OnClickListener() {
+        conferma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-            }
-        });
-
-        cambiaPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        modificaInfoContatto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
+                Intent intent = new Intent(ModificaNumero.this, ModificaNumero.class);
+                intent.putExtra(String.valueOf(R.string.PATH_UTENTE), utente);
+                startActivity(intent);
             }
         });
     }
