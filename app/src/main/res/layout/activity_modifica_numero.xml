@@ -43,7 +43,8 @@
                     android:text="1234567890"
                     android:textSize="16sp"
                     android:textAlignment="center"
-                    android:gravity="center_horizontal"/>
+                    android:gravity="center_horizontal"
+                    android:id="@+id/numeroText"/>
 
             </LinearLayout>
 

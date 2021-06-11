@@ -59,21 +59,27 @@ public class Impostazioni extends AppCompatActivity {
         modificaDati.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(Impostazioni.this, ModificaDati.class);
+                intent.putExtra(String.valueOf(R.string.PATH_UTENTE), utente);
+                startActivity(intent);
             }
         });
 
         cambiaPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(Impostazioni.this, CambiaPassword.class);
+                intent.putExtra(String.valueOf(R.string.PATH_UTENTE), utente);
+                startActivity(intent);
             }
         });
 
         modificaInfoContatto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(Impostazioni.this, ModificaNumero.class);
+                intent.putExtra(String.valueOf(R.string.PATH_UTENTE), utente);
+                startActivity(intent);
             }
         });
     }

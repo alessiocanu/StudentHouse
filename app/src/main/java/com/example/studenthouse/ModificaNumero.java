@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.io.Serializable;
 
@@ -17,7 +18,10 @@ public class ModificaNumero extends AppCompatActivity {
 
     Utente utente = new Utente();
 
+    TextInputLayout numeroTIL;
     TextInputEditText numero;
+
+    TextView numeroText;
 
     Button conferma;
 
@@ -38,7 +42,10 @@ public class ModificaNumero extends AppCompatActivity {
         backIcon.setImageResource(R.drawable.ic_baseline_arrow_back_24);
         rightIcon.setVisibility(View.INVISIBLE);
 
+        numeroTIL = findViewById(R.id.numeroModTIL);
         numero = findViewById(R.id.numeroMod);
+
+        numeroText = findViewById(R.id.numeroText);
 
         conferma = findViewById(R.id.confermamodnumero);
 
@@ -52,6 +59,8 @@ public class ModificaNumero extends AppCompatActivity {
             this.utente = new Utente();
         }
 
+        numeroText.setText(utente.getNumTelefono());
+
         backIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,10 +73,22 @@ public class ModificaNumero extends AppCompatActivity {
         conferma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                CambiaNumero();
                 Intent intent = new Intent(ModificaNumero.this, ModificaNumero.class);
                 intent.putExtra(String.valueOf(R.string.PATH_UTENTE), utente);
                 startActivity(intent);
             }
         });
+    }
+
+    public void CambiaNumero(){
+        if(!(numero.getText().toString().isEmpty())){
+            for(int i = 0; i < Utente.userList.size(); i++){
+                if(Utente.userList.get(i).getUsername().equals(utente.getUsername())){
+                    Utente.userList.get(i).setNumTelefono(numero.getText().toString());
+                    utente = Utente.userList.get(i);
+                }
+            }
+        }
     }
 }

@@ -12,6 +12,8 @@ import android.widget.TextView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.io.Serializable;
+
 public class CambiaPassword extends AppCompatActivity {
 
     Utente utente = new Utente();
@@ -47,6 +49,16 @@ public class CambiaPassword extends AppCompatActivity {
         nuova2 = findViewById(R.id.confermapassword);
 
         conferma = findViewById(R.id.confermamodpassword);
+
+        Intent intent = getIntent();
+        Serializable object = intent.getSerializableExtra(String.valueOf(R.string.PATH_UTENTE));
+
+        if(object instanceof Utente){
+            this.utente = (Utente)object;
+        }
+        else{
+            this.utente = new Utente();
+        }
 
         backIcon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,6 +109,7 @@ public class CambiaPassword extends AppCompatActivity {
         for(int i = 0; i < Utente.userList.size(); i++){
             if(Utente.userList.get(i).getUsername().equals(utente.getUsername())){
                 Utente.userList.get(i).setPassword(nuova.getText().toString());
+                utente = Utente.userList.get(i);
             }
         }
         return true;

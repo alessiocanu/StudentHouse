@@ -20,6 +20,8 @@ public class ModificaDati extends AppCompatActivity {
 
     TextInputEditText nome, cognome;
 
+    TextView nomeText, cognomeText;
+
     Button conferma;
 
     TextView actionBarText;
@@ -42,6 +44,9 @@ public class ModificaDati extends AppCompatActivity {
         nome = findViewById(R.id.nomeMod);
         cognome = findViewById(R.id.cognomeMod);
 
+        nomeText = findViewById(R.id.nomeText);
+        cognomeText = findViewById(R.id.cognomeText);
+
         conferma = findViewById(R.id.confermamoddati);
 
         Intent intent = getIntent();
@@ -53,6 +58,9 @@ public class ModificaDati extends AppCompatActivity {
         else{
             this.utente = new Utente();
         }
+
+        nomeText.setText(utente.getNome());
+        cognomeText.setText(utente.getCognome());
 
         backIcon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +87,7 @@ public class ModificaDati extends AppCompatActivity {
             for(int i = 0; i < Utente.userList.size(); i++){
                 if(Utente.userList.get(i).getUsername().equals(utente.getUsername())){
                     Utente.userList.get(i).setNome(nome.getText().toString());
+                    utente = Utente.userList.get(i);
                 }
             }
         }
@@ -86,6 +95,7 @@ public class ModificaDati extends AppCompatActivity {
             for(int i = 0; i < Utente.userList.size(); i++){
                 if(Utente.userList.get(i).getUsername().equals(utente.getUsername())){
                     Utente.userList.get(i).setCognome(cognome.getText().toString());
+                    utente = Utente.userList.get(i);
                 }
             }
         }

@@ -43,7 +43,8 @@
                     android:text="Alessio"
                     android:textSize="16sp"
                     android:textAlignment="center"
-                    android:gravity="center_horizontal"/>
+                    android:gravity="center_horizontal"
+                    android:id="@+id/nomeText"/>
 
             </LinearLayout>
 
@@ -89,7 +90,8 @@
                     android:text="Canu"
                     android:textSize="16sp"
                     android:textAlignment="center"
-                    android:gravity="center_horizontal"/>
+                    android:gravity="center_horizontal"
+                    android:id="@+id/cognomeText"/>
 
             </LinearLayout>
 
