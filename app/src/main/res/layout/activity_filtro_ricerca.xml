@@ -38,6 +38,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:text="2 Stanze"/>
 
         </LinearLayout>
@@ -60,6 +61,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:text="3 Stanze"/>
 
         </LinearLayout>
@@ -82,6 +84,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:text="4 Stanze"/>
 
         </LinearLayout>
@@ -104,6 +107,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:text="1 Bagno"/>
 
         </LinearLayout>
@@ -126,6 +130,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:text="2 Bagni"/>
 
         </LinearLayout>
@@ -157,8 +162,10 @@
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:text="Conferma"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="60dp"
             android:id="@+id/confermafiltri"/>
 
     </LinearLayout>

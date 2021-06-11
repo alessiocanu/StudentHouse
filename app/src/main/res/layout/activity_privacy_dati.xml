@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingHorizontal="10dp">
+        android:paddingHorizontal="20dp">
 
         <Space
             android:layout_width="match_parent"
@@ -25,14 +25,17 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:text="Vuoi far vedere la tua facoltà?"/>
+                android:text="Vuoi far vedere la tua facoltà?"
+                android:textColor="@color/black"/>
 
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/checkboxfacolta"/>
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:id="@+id/checkboxfacolta" />
 
         </LinearLayout>
 
@@ -47,13 +50,16 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:text="Vuoi far vedere il tuo numero di telefono?"/>
+                android:text="Vuoi far vedere il tuo numero di telefono?"
+                android:textColor="@color/black"/>
 
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:id="@+id/checkboxnumero"/>
 
         </LinearLayout>
@@ -64,9 +70,11 @@
             android:layout_marginVertical="20dp"/>
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
             android:text="Conferma"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="60dp"
             android:id="@+id/confermaprivacy"/>
 
     </LinearLayout>

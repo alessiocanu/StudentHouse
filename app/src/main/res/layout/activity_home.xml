@@ -59,7 +59,7 @@
                         android:hint="Scrivi un post"
                         android:id="@+id/post"/>
 
-                    <androidx.appcompat.widget.AppCompatButton
+                    <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
