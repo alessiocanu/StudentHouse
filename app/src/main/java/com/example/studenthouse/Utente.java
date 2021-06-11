@@ -13,7 +13,7 @@ public class Utente implements Serializable {
     private String nome, cognome;
     private String facolta;
 
-    private Boolean showFacolta;
+    private Boolean showFacolta, showNumero;
 
     private String numTelefono;
 
@@ -23,7 +23,8 @@ public class Utente implements Serializable {
         this.nome = "";
         this.cognome = "";
         this.facolta = "";
-        this.showFacolta = false;
+        this.showFacolta = true;
+        this.showNumero = true;
         this.numTelefono = "";
     }
 
@@ -33,7 +34,8 @@ public class Utente implements Serializable {
         this.nome = nome;
         this.cognome = cognome;
         this.facolta = facolta;
-        showFacolta = false;
+        this.showFacolta = true;
+        this.showNumero = true;
         this.numTelefono = numTelefono;
     }
 
@@ -91,5 +93,13 @@ public class Utente implements Serializable {
 
     public void setNumTelefono(String numTelefono) {
         this.numTelefono = numTelefono;
+    }
+
+    public Boolean getShowNumero() {
+        return showNumero;
+    }
+
+    public void setShowNumero(Boolean showNumero) {
+        this.showNumero = showNumero;
     }
 }

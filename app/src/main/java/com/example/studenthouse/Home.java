@@ -170,19 +170,24 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
-            case R.id.preferiti:
-                Intent intent = new Intent(Home.this, Preferiti.class);
+            case R.id.profilo:
+                Intent intent = new Intent(Home.this, Profilo.class);
                 intent.putExtra(String.valueOf(R.string.PATH_UTENTE), utente);
                 startActivity(intent);
                 break;
-            case R.id.impostazioni:
-                Intent intent2 = new Intent(Home.this, Impostazioni.class);
+            case R.id.preferiti:
+                Intent intent2 = new Intent(Home.this, Preferiti.class);
                 intent2.putExtra(String.valueOf(R.string.PATH_UTENTE), utente);
                 startActivity(intent2);
                 break;
-            case R.id.logout:
-                Intent intent3 = new Intent(Home.this, Login.class);
+            case R.id.impostazioni:
+                Intent intent3 = new Intent(Home.this, Impostazioni.class);
+                intent3.putExtra(String.valueOf(R.string.PATH_UTENTE), utente);
                 startActivity(intent3);
+                break;
+            case R.id.logout:
+                Intent intent4 = new Intent(Home.this, Login.class);
+                startActivity(intent4);
                 break;
         }
         return true;

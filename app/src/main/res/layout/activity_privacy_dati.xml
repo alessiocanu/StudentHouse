@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ModificaFacolta">
+    tools:context=".PrivacyDati"
+    android:orientation="vertical">
     <include layout="@layout/actionbar"/>
 
     <LinearLayout
@@ -26,22 +25,14 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Facoltà: "
-                android:textSize="16sp"
-                android:gravity="start"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp" />
+                android:text="Vuoi far vedere la tua facoltà?"/>
 
-            <TextView
+            <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Informatica"
-                android:textSize="16sp"
-                android:textAlignment="center"
-                android:gravity="center_horizontal"
-                android:id="@+id/facoltaText"/>
+                android:id="@+id/checkboxfacolta"/>
 
         </LinearLayout>
 
@@ -50,12 +41,22 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="20dp"/>
 
-        <Spinner
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:id="@+id/spinnermodfacolta"
-            android:gravity="center_horizontal" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vuoi far vedere il tuo numero di telefono?"/>
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkboxnumero"/>
+
+        </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
@@ -66,8 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Conferma"
-            android:layout_gravity="center"
-            android:id="@+id/confermamodfacolta"/>
+            android:id="@+id/confermaprivacy"/>
 
     </LinearLayout>
 

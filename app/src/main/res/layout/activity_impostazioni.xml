@@ -81,6 +81,41 @@
             android:paddingLeft="80dp"
             android:id="@+id/modificafacolta"/>
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Privacy"
+            android:textSize="12sp"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Scegli quali dati mostrare"
+            android:textSize="16sp"
+            android:layout_marginVertical="20dp"
+            android:paddingLeft="80dp"
+            android:id="@+id/visibilitadati"/>
+
     </LinearLayout>
 
 </LinearLayout>

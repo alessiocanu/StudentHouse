@@ -4,6 +4,10 @@
     <group>
 
         <item
+            android:id="@+id/profilo"
+            android:title="Profilo"/>
+
+        <item
             android:id="@+id/preferiti"
             android:title="Preferiti"/>
 
