@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.StudentHouse">
-        <activity android:name=".ModificaNumero"></activity>
+        <activity android:name=".ModificaFacolta"></activity>
+        <activity android:name=".ModificaNumero" />
         <activity android:name=".CambiaPassword" />
         <activity android:name=".ModificaDati" />
         <activity android:name=".Preferiti" />
