@@ -35,7 +35,7 @@ public class PrivacyDati extends AppCompatActivity {
         conferma = findViewById(R.id.confermaprivacy);
 
         actionBarText = findViewById(R.id.actionbartext);
-        actionBarText.setText("Impostazioni");
+        actionBarText.setText("Impostazioni della privacy");
 
         backIcon = findViewById(R.id.lefticon);
         rightIcon = findViewById(R.id.righticon);
@@ -51,6 +51,14 @@ public class PrivacyDati extends AppCompatActivity {
         }
         else{
             this.utente = new Utente();
+        }
+
+        if(utente.getShowFacolta()){
+            facolta.setChecked(true);
+        }
+
+        if(utente.getShowNumero()){
+            numero.setChecked(true);
         }
 
         backIcon.setOnClickListener(new View.OnClickListener() {
