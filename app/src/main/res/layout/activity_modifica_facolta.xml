@@ -32,8 +32,7 @@
                 android:textSize="16sp"
                 android:gravity="start"
                 android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                android:textColor="@color/black" />
+                android:layout_marginLeft="20dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -42,7 +41,6 @@
                 android:textSize="16sp"
                 android:textAlignment="center"
                 android:gravity="center_horizontal"
-                android:textColor="@color/black"
                 android:id="@+id/facoltaText"/>
 
         </LinearLayout>

@@ -30,7 +30,6 @@
                 android:layout_height="wrap_content"
                 android:text="Annuncio"
                 android:textSize="30sp"
-                android:textColor="@color/black"
                 android:id="@+id/titolo"/>
 
             <TextView
@@ -65,7 +64,6 @@
                 irure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                 Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt
                 mollit anim id est laborum."
-                android:textColor="@color/black"
                 android:id="@+id/descrizione"/>
 
             <Space

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Utente implements Serializable {
     public static ArrayList<Utente> userList = new ArrayList<Utente>();
-    public static ArrayList<Annuncio> preferiti = new ArrayList<Annuncio>();
+    private ArrayList<Annuncio> preferiti = new ArrayList<Annuncio>();
 
     private String username;
     private String password;
@@ -101,5 +101,13 @@ public class Utente implements Serializable {
 
     public void setShowNumero(Boolean showNumero) {
         this.showNumero = showNumero;
+    }
+
+    public ArrayList<Annuncio> getPreferiti() {
+        return preferiti;
+    }
+
+    public void setPreferiti(Annuncio annuncio) {
+        this.preferiti.add(annuncio);
     }
 }

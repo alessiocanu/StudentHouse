@@ -36,8 +36,7 @@
                     android:textSize="16sp"
                     android:gravity="start"
                     android:layout_marginStart="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:textColor="@color/black" />
+                    android:layout_marginLeft="20dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -46,7 +45,6 @@
                     android:textSize="16sp"
                     android:textAlignment="center"
                     android:gravity="center_horizontal"
-                    android:textColor="@color/black"
                     android:id="@+id/numeroText"/>
 
             </LinearLayout>
@@ -60,12 +58,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:boxBackgroundColor="@color/white"
+                android:hint="Inserisci un nuovo numero di telefono"
+                android:textColorHint="@color/dark_grey"
                 android:id="@+id/numeroModTIL">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Inserisci un nuovo numero di telefono"
                     android:inputType="number"
                     android:id="@+id/numeroMod"/>
 

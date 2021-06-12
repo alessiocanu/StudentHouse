@@ -36,8 +36,7 @@
                     android:textSize="16sp"
                     android:gravity="start"
                     android:layout_marginStart="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:textColor="@color/black"/>
+                    android:layout_marginLeft="20dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -46,7 +45,6 @@
                     android:textSize="16sp"
                     android:textAlignment="center"
                     android:gravity="center_horizontal"
-                    android:textColor="@color/black"
                     android:id="@+id/nomeText"/>
 
             </LinearLayout>
@@ -59,12 +57,13 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Inserisci un nuovo nome"
+                android:textColorHint="@color/dark_grey"
                 app:boxBackgroundColor="@color/white">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Inserisci un nuovo nome"
                     android:inputType="text"
                     android:id="@+id/nomeMod"/>
 
@@ -87,8 +86,7 @@
                     android:textSize="16sp"
                     android:gravity="start"
                     android:layout_marginStart="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:textColor="@color/black" />
+                    android:layout_marginLeft="20dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -97,7 +95,6 @@
                     android:textSize="16sp"
                     android:textAlignment="center"
                     android:gravity="center_horizontal"
-                    android:textColor="@color/black"
                     android:id="@+id/cognomeText"/>
 
             </LinearLayout>
@@ -110,12 +107,13 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Inserisci un nuovo cognome"
+                android:textColorHint="@color/dark_grey"
                 app:boxBackgroundColor="@color/white">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Inserisci un nuovo cognome"
                     android:inputType="text"
                     android:id="@+id/cognomeMod"/>
 

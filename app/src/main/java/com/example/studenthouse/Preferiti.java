@@ -50,7 +50,7 @@ public class Preferiti extends AppCompatActivity {
 
         LinearLayout linearLayout = findViewById(R.id.layoutpreferiti);
 
-        for(int i = 0; i < Utente.preferiti.size(); i++){
+        for(int i = 0; i < utente.getPreferiti().size(); i++){
             LinearLayout layout = new LinearLayout(this);
             layout.setOrientation(LinearLayout.VERTICAL);
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -58,14 +58,14 @@ public class Preferiti extends AppCompatActivity {
             layout.setLayoutParams(lp);
 
             TextView titolo = new TextView(this);
-            titolo.setText(Utente.preferiti.get(i).getTitolo());
+            titolo.setText(utente.getPreferiti().get(i).getTitolo());
             titolo.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
             titolo.setTextSize(20);
             titolo.setLayoutParams(layout.getLayoutParams());
             layout.addView(titolo);
 
             TextView costo = new TextView(this);
-            String costoText = Utente.preferiti.get(i).getCosto()+ " €";
+            String costoText = utente.getPreferiti().get(i).getCosto()+ " €";
             costo.setText(costoText);
             costo.setTextSize(18);
             costo.setLayoutParams(layout.getLayoutParams());
@@ -80,7 +80,7 @@ public class Preferiti extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(Preferiti.this, VistaAnnuncio.class);
-                    annuncio = Utente.preferiti.get(k);
+                    annuncio = utente.getPreferiti().get(k);
                     intent.putExtra(String.valueOf(R.string.PATH_UTENTE), utente);
                     intent.putExtra(String.valueOf(R.string.PATH_ANNUNCIO), annuncio);
                     startActivity(intent);

@@ -86,11 +86,11 @@ public class Ricerca extends AppCompatActivity {
                 starLayout.setLayoutParams(starLp);
 
                 ImageView star = new ImageView(this);
-                if(Utente.preferiti.contains(Annuncio.annuncioList.get(i))){
-                    star.setImageResource(R.drawable.ic_baseline_star_24);
+                if(utente.getPreferiti().contains(Annuncio.annuncioList.get(i))){
+                    star.setImageResource(R.drawable.ic_baseline_star_24black);
                 }
                 else{
-                    star.setImageResource(R.drawable.ic_baseline_star_border_24);
+                    star.setImageResource(R.drawable.ic_baseline_star_border_24black);
                 }
                 star.setLayoutParams(starLayout.getLayoutParams());
 
@@ -98,14 +98,20 @@ public class Ricerca extends AppCompatActivity {
                 star.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        boolean trovato = Utente.preferiti.contains(Annuncio.annuncioList.get(j));
+                        boolean trovato = utente.getPreferiti().contains(Annuncio.annuncioList.get(j));
+                        int trovatoNum = 0;
                         if(trovato){
-                            Utente.preferiti.remove(Utente.preferiti.get(j));
-                            star.setImageResource(R.drawable.ic_baseline_star_border_24);
+                            for(int i = 0; i < utente.getPreferiti().size(); i++){
+                                if(utente.getPreferiti().get(i).equals(Annuncio.annuncioList.get(j))) {
+                                    trovatoNum = i;
+                                }
+                            }
+                            utente.getPreferiti().remove(trovatoNum);
+                            star.setImageResource(R.drawable.ic_baseline_star_border_24black);
                         }
                         else{
-                            Utente.preferiti.add(Annuncio.annuncioList.get(j));
-                            star.setImageResource(R.drawable.ic_baseline_star_24);
+                            utente.setPreferiti(Annuncio.annuncioList.get(j));
+                            star.setImageResource(R.drawable.ic_baseline_star_24black);
                         }
                     }
                 });

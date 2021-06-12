@@ -51,12 +51,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:boxBackgroundColor="@color/white"
+            android:hint="Inserisci il tuo nome utente"
+            android:textColorHint="@color/dark_grey"
             android:id="@+id/usernameLogTIL">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Inserisci il tuo nome utente"
                 android:id="@+id/usernameLog"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -71,12 +72,13 @@
             android:layout_height="wrap_content"
             app:passwordToggleEnabled="true"
             app:boxBackgroundColor="@color/white"
+            android:hint="Inserisci la tua password"
+            android:textColorHint="@color/dark_grey"
             android:id="@+id/passwordLogTIL">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Inserisci la tua password"
                 android:inputType="textPassword"
                 android:id="@+id/passwordLog"/>
 
