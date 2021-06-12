@@ -9,60 +9,72 @@
     tools:context=".VistaAnnuncio">
     <include layout="@layout/actionbar"/>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginHorizontal="10dp">
+        android:layout_height="wrap_content">
 
-        <Space
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="20dp"/>
+            android:orientation="vertical"
+            android:layout_marginHorizontal="10dp"
+            android:id="@+id/layoutannuncio">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Annuncio"
-            android:textSize="30sp"
-            android:textColor="@color/black"
-            android:id="@+id/titolo"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nome Cognome"
-            android:id="@+id/proprietario"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Annuncio"
+                android:textSize="30sp"
+                android:textColor="@color/black"
+                android:id="@+id/titolo"/>
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nome Cognome"
+                android:id="@+id/proprietario"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="999 €"
-            android:textSize="16sp"
-            android:id="@+id/costo"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"/>
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="999 €"
+                android:textSize="16sp"
+                android:id="@+id/costo"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
-            tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum
-            exercitationem ullamco laboriosam, nisi ut aliquid ex ea commodi consequatur. Duis aute
-            irure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum."
-            android:textColor="@color/black"
-            android:id="@+id/descrizione"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"/>
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
+                tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum
+                exercitationem ullamco laboriosam, nisi ut aliquid ex ea commodi consequatur. Duis aute
+                irure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt
+                mollit anim id est laborum."
+                android:textColor="@color/black"
+                android:id="@+id/descrizione"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

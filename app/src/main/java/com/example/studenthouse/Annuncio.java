@@ -1,5 +1,7 @@
 package com.example.studenthouse;
 
+import android.media.Image;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -14,6 +16,8 @@ public class Annuncio implements Serializable {
     private int costo;
 
     private Filtro filtro;
+
+    private ArrayList<Integer> images = new ArrayList<Integer>();
 
     public Annuncio(){
         this.proprietario = "";
@@ -69,5 +73,13 @@ public class Annuncio implements Serializable {
 
     public void setCosto(int costo) {
         this.costo = costo;
+    }
+
+    public ArrayList<Integer> getImages() {
+        return images;
+    }
+
+    public void setImages(Integer image) {
+        this.images.add(image);
     }
 }

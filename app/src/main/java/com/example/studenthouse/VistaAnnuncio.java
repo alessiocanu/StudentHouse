@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.io.Serializable;
@@ -71,6 +74,23 @@ public class VistaAnnuncio extends AppCompatActivity {
         String costoText = annuncio.getCosto() + " €";
         costo.setText(costoText);
         descrizione.setText(annuncio.getDescrizione());
+
+        LinearLayout linearLayout = findViewById(R.id.layoutannuncio);
+
+        LinearLayout layout = new LinearLayout(this);
+        layout.setOrientation(LinearLayout.VERTICAL);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        lp.setMargins(10, 10, 10, 10);
+        layout.setLayoutParams(lp);
+        for(int i = 0; i < annuncio.getImages().size(); i++){
+            ImageView image = new ImageView(this);
+            image.setImageResource(annuncio.getImages().get(i));
+            image.setAdjustViewBounds(true);
+            image.setScaleType(ImageView.ScaleType.FIT_CENTER);
+            image.setLayoutParams(layout.getLayoutParams());
+            layout.addView(image);
+        }
+        linearLayout.addView(layout);
 
         backIcon.setOnClickListener(new View.OnClickListener() {
             @Override

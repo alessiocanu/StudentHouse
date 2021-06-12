@@ -161,5 +161,39 @@ public class Login extends AppCompatActivity {
         Annuncio.annuncioList.add(new Annuncio("Walter Bianco", "Quattro stanze solo ragazzi",
                 "Appartamento di quattro stanze, zona Monserrato, vicino a un pratico autolavaggio. " +
                         "Contattatemi al 333 *** ****, prezzo trattabile.", 250, casa4));
+
+        Annuncio.annuncioList.get(0).setImages(R.drawable.casa1_1);
+        Annuncio.annuncioList.get(0).setImages(R.drawable.casa1_2);
+        Annuncio.annuncioList.get(0).setImages(R.drawable.casa1_3);
+
+        Annuncio.annuncioList.get(1).setImages(R.drawable.casa2_1);
+        Annuncio.annuncioList.get(1).setImages(R.drawable.casa2_2);
+        Annuncio.annuncioList.get(1).setImages(R.drawable.casa2_3);
+
+        Annuncio.annuncioList.get(2).setImages(R.drawable.casa3_1);
+        Annuncio.annuncioList.get(2).setImages(R.drawable.casa3_2);
+        Annuncio.annuncioList.get(2).setImages(R.drawable.casa3_3);
+        Annuncio.annuncioList.get(2).setImages(R.drawable.casa3_4);
+
+        Annuncio.annuncioList.get(3).setImages(R.drawable.casa4_1);
+        Annuncio.annuncioList.get(3).setImages(R.drawable.casa4_2);
+        Annuncio.annuncioList.get(3).setImages(R.drawable.casa4_3);
+
+        Annuncio.annuncioList.get(4).setImages(R.drawable.casa5_1);
+        Annuncio.annuncioList.get(4).setImages(R.drawable.casa5_2);
+        Annuncio.annuncioList.get(4).setImages(R.drawable.casa5_3);
+        Annuncio.annuncioList.get(4).setImages(R.drawable.casa5_4);
+
+        Annuncio.annuncioList.get(5).setImages(R.drawable.casa6_1);
+        Annuncio.annuncioList.get(5).setImages(R.drawable.casa6_2);
+        Annuncio.annuncioList.get(5).setImages(R.drawable.casa6_3);
+
+        Annuncio.annuncioList.get(6).setImages(R.drawable.casa7_1);
+        Annuncio.annuncioList.get(6).setImages(R.drawable.casa7_2);
+        Annuncio.annuncioList.get(6).setImages(R.drawable.casa7_3);
+
+        Annuncio.annuncioList.get(7).setImages(R.drawable.casa8_1);
+        Annuncio.annuncioList.get(7).setImages(R.drawable.casa8_2);
+        Annuncio.annuncioList.get(7).setImages(R.drawable.casa8_3);
     }
 }
