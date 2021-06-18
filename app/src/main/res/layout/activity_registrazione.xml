@@ -74,7 +74,8 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:passwordToggleEnabled="true"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/black"
                 app:boxBackgroundColor="@color/white"
                 android:hint="Inserisci una password"
                 android:textColorHint="@color/dark_grey"
@@ -96,7 +97,8 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:passwordToggleEnabled="true"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/black"
                 app:boxBackgroundColor="@color/white"
                 android:hint="Conferma password"
                 android:textColorHint="@color/dark_grey"

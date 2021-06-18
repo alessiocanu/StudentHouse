@@ -302,5 +302,15 @@ public class Ricerca extends AppCompatActivity {
                 return false;
             }
         });
+
+        barraRicerca.setOnCloseListener(new SearchView.OnCloseListener() {
+            @Override
+            public boolean onClose() {
+                Intent intent = new Intent(Ricerca.this, Ricerca.class);
+                intent.putExtra(String.valueOf(R.string.PATH_UTENTE), utente);
+                startActivity(intent);
+                return false;
+            }
+        });
     }
 }

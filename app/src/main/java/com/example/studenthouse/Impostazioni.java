@@ -15,6 +15,7 @@ public class Impostazioni extends AppCompatActivity {
     Utente utente = new Utente();
 
     TextView modificaDati, cambiaPassword, modificaInfoContatto, modificaFacolta;
+    TextView visibilitaDati;
 
     TextView actionBarText;
     ImageView backIcon, rightIcon;
@@ -37,6 +38,8 @@ public class Impostazioni extends AppCompatActivity {
         cambiaPassword = findViewById(R.id.cambiapassword);
         modificaInfoContatto = findViewById(R.id.modificainfocontatto);
         modificaFacolta = findViewById(R.id.modificafacolta);
+
+        visibilitaDati = findViewById(R.id.visibilitadati);
 
         Intent intent = getIntent();
         Serializable object = intent.getSerializableExtra(String.valueOf(R.string.PATH_UTENTE));
@@ -84,10 +87,19 @@ public class Impostazioni extends AppCompatActivity {
             }
         });
 
-        modificaInfoContatto.setOnClickListener(new View.OnClickListener() {
+        modificaFacolta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Impostazioni.this, ModificaFacolta.class);
+                intent.putExtra(String.valueOf(R.string.PATH_UTENTE), utente);
+                startActivity(intent);
+            }
+        });
+
+        visibilitaDati.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Impostazioni.this, PrivacyDati.class);
                 intent.putExtra(String.valueOf(R.string.PATH_UTENTE), utente);
                 startActivity(intent);
             }
