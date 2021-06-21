@@ -123,6 +123,13 @@ public class Registrazione extends AppCompatActivity implements AdapterView.OnIt
         else{
             passwordTIL.setError(null);
         }
+        if(password.getText().toString().length() < 6){
+            passwordTIL.setError("La password dev'essere di almeno 6 caratteri!");
+            return false;
+        }
+        else{
+            passwordTIL.setError(null);
+        }
         if(!(password2.getText().toString().equals(password.getText().toString()))){
             password2TIL.setError("Le due password non coincidono!");
             return false;
@@ -144,8 +151,8 @@ public class Registrazione extends AppCompatActivity implements AdapterView.OnIt
         else{
             cognomeTIL.setError(null);
         }
-        if(numero.getText().toString().isEmpty()){
-            numeroTIL.setError("Inserisci un numero di telefono per contattarti!");
+        if(numero.getText().toString().isEmpty() || numero.getText().toString().length() != 10){
+            numeroTIL.setError("Inserisci un numero di telefono valido!");
             return false;
         }
         else{

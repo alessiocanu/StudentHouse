@@ -14,7 +14,9 @@ public class Profilo extends AppCompatActivity {
 
     Utente utente = new Utente();
 
-    TextView nome, cognome, facolta, numero;
+    TextView nomeCognome;
+
+    TextView facolta, numero;
 
     TextView actionBarText;
     ImageView backIcon, rightIcon;
@@ -24,8 +26,7 @@ public class Profilo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profilo);
 
-        nome = findViewById(R.id.nomeprofilo);
-        cognome = findViewById(R.id.cognomeprofilo);
+        nomeCognome = findViewById(R.id.nomecognome);
         facolta = findViewById(R.id.facoltaprofilo);
         numero = findViewById(R.id.numeroprofilo);
 
@@ -48,8 +49,7 @@ public class Profilo extends AppCompatActivity {
             this.utente = new Utente();
         }
 
-        nome.setText(utente.getNome());
-        cognome.setText(utente.getCognome());
+        nomeCognome.setText(utente.getNome() + " " + utente.getCognome());
 
         if(utente.getShowFacolta()){
             facolta.setText(utente.getFacolta());

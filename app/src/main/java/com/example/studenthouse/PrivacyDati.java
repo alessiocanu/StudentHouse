@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.Serializable;
 
@@ -18,6 +19,7 @@ public class PrivacyDati extends AppCompatActivity {
     Utente utente = new Utente();
 
     CheckBox facolta, numero;
+    boolean wasFacolta, wasNumero;
 
     Button conferma;
 
@@ -61,11 +63,21 @@ public class PrivacyDati extends AppCompatActivity {
             numero.setChecked(true);
         }
 
+        wasFacolta = facolta.isChecked();
+        wasNumero = numero.isChecked();
+
         backIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PrivacyDati.this, Impostazioni.class);
                 intent.putExtra(String.valueOf(R.string.PATH_UTENTE), utente);
+                for(int i = 0; i < Utente.userList.size(); i++){
+                    if(Utente.userList.get(i).getUsername().equals(utente.getUsername())){
+                        Utente.userList.get(i).setShowFacolta(wasFacolta);
+                        Utente.userList.get(i).setShowNumero(wasNumero);
+                        utente = Utente.userList.get(i);
+                    }
+                }
                 startActivity(intent);
             }
         });
@@ -76,6 +88,7 @@ public class PrivacyDati extends AppCompatActivity {
                 Intent intent = new Intent(PrivacyDati.this, PrivacyDati.class);
                 intent.putExtra(String.valueOf(R.string.PATH_UTENTE), utente);
                 startActivity(intent);
+                Toast.makeText(PrivacyDati.this, "Privacy modificata", Toast.LENGTH_SHORT).show();
             }
         });
 

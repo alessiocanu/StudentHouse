@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -73,22 +74,26 @@ public class ModificaNumero extends AppCompatActivity {
         conferma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CambiaNumero();
-                Intent intent = new Intent(ModificaNumero.this, ModificaNumero.class);
-                intent.putExtra(String.valueOf(R.string.PATH_UTENTE), utente);
-                startActivity(intent);
+                if(CambiaNumero()) {
+                    Intent intent = new Intent(ModificaNumero.this, Impostazioni.class);
+                    intent.putExtra(String.valueOf(R.string.PATH_UTENTE), utente);
+                    startActivity(intent);
+                    Toast.makeText(ModificaNumero.this, "Numero modificato", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
 
-    public void CambiaNumero(){
-        if(!(numero.getText().toString().isEmpty())){
+    public boolean CambiaNumero(){
+        if(!(numero.getText().toString().isEmpty() || numero.getText().toString().length() != 10)){
             for(int i = 0; i < Utente.userList.size(); i++){
                 if(Utente.userList.get(i).getUsername().equals(utente.getUsername())){
                     Utente.userList.get(i).setNumTelefono(numero.getText().toString());
                     utente = Utente.userList.get(i);
+                    return true;
                 }
             }
         }
+        return false;
     }
 }

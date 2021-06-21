@@ -27,8 +27,7 @@
             <TextView
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:text="Vuoi far vedere la tua facoltà?"
-                android:textColor="@color/black"/>
+                android:text="Vuoi far vedere la tua facoltà?"/>
 
             <CheckBox
                 android:layout_width="match_parent"
@@ -52,8 +51,7 @@
             <TextView
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:text="Vuoi far vedere il tuo numero di telefono?"
-                android:textColor="@color/black"/>
+                android:text="Vuoi far vedere il tuo numero di telefono?"/>
 
             <CheckBox
                 android:layout_width="match_parent"

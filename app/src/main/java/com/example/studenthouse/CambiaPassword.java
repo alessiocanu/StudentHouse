@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -75,6 +76,7 @@ public class CambiaPassword extends AppCompatActivity {
                 if(CheckPassword()) {
                     Intent intent = new Intent(CambiaPassword.this, CambiaPassword.class);
                     intent.putExtra(String.valueOf(R.string.PATH_UTENTE), utente);
+                    Toast.makeText(CambiaPassword.this, "Password modificata", Toast.LENGTH_SHORT).show();
                     startActivity(intent);
                 }
             }

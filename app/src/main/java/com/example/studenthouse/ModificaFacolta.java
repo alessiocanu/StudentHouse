@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.Serializable;
 
@@ -66,8 +67,9 @@ public class ModificaFacolta extends AppCompatActivity implements AdapterView.On
         conferma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ModificaFacolta.this, ModificaFacolta.class);
+                Intent intent = new Intent(ModificaFacolta.this, Impostazioni.class);
                 intent.putExtra(String.valueOf(R.string.PATH_UTENTE), utente);
+                Toast.makeText(ModificaFacolta.this, "Facoltà modificata", Toast.LENGTH_SHORT).show();
                 startActivity(intent);
             }
         });
@@ -86,7 +88,7 @@ public class ModificaFacolta extends AppCompatActivity implements AdapterView.On
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         for(int i = 0; i < Utente.userList.size(); i++){
             if(Utente.userList.get(i).getUsername().equals(utente.getUsername())){
-                Utente.userList.get(i).setPassword(parent.getItemAtPosition(position).toString());
+                Utente.userList.get(i).setFacolta(parent.getItemAtPosition(position).toString());
                 utente = Utente.userList.get(i);
             }
         }

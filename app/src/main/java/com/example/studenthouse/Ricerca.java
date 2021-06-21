@@ -50,6 +50,10 @@ public class Ricerca extends AppCompatActivity {
         barraRicerca.setSubmitButtonEnabled(true);
         barraRicerca.setIconified(false);
 
+        int id = barraRicerca.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
+        TextView textView = (TextView) barraRicerca.findViewById(id);
+        textView.setTextColor(Color.WHITE);
+
         Intent intent = getIntent();
         Serializable object = intent.getSerializableExtra(String.valueOf(R.string.PATH_UTENTE));
         Serializable object2 = intent.getSerializableExtra(String.valueOf(R.string.PATH_FILTRO));
