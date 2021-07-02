@@ -12,6 +12,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
@@ -28,6 +29,7 @@ public class Ricerca extends AppCompatActivity {
     String ricerca;
 
     SearchView barraRicerca;
+    EditText searchEditText;
 
     TextView actionBarText;
     ImageView backIcon, filterIcon;
@@ -52,7 +54,7 @@ public class Ricerca extends AppCompatActivity {
 
         int id = barraRicerca.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
         TextView textView = (TextView) barraRicerca.findViewById(id);
-        textView.setTextColor(Color.WHITE);
+        textView.setTextColor(getResources().getColor(R.color.dark_grey));
 
         Intent intent = getIntent();
         Serializable object = intent.getSerializableExtra(String.valueOf(R.string.PATH_UTENTE));
