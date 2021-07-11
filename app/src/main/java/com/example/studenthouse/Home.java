@@ -16,6 +16,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Space;
@@ -35,13 +36,13 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     Utente utente = new Utente();
     Post post = new Post();
 
-    ImageView menuIcon, searchIcon;
+    ImageView menuIcon, rightIcon;
 
     TextInputLayout postTIL;
 
     TextInputEditText postText;
 
-    AppCompatButton inviaPost;
+    Button inviaPost, sfogliaAnnunci;
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -52,11 +53,14 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         setContentView(R.layout.activity_home);
 
         menuIcon = findViewById(R.id.lefticon);
-        searchIcon = findViewById(R.id.righticon);
+        rightIcon = findViewById(R.id.righticon);
+        rightIcon.setVisibility(View.INVISIBLE);
 
         postTIL = findViewById(R.id.postTIL);
         postText = findViewById(R.id.post);
         inviaPost = findViewById(R.id.inviapost);
+
+        sfogliaAnnunci = findViewById(R.id.sfogliaannunci);
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
@@ -122,7 +126,16 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             }
         });
 
-        searchIcon.setOnClickListener(new View.OnClickListener() {
+//        searchIcon.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(Home.this, Ricerca.class);
+//                intent.putExtra(String.valueOf(R.string.PATH_UTENTE), utente);
+//                startActivity(intent);
+//            }
+//        });
+
+        sfogliaAnnunci.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Home.this, Ricerca.class);
